@@ -2,7 +2,7 @@
 <TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmItem" TcSmVersion="1.0" TcVersion="3.1.4022.30" ClassName="CNestedPlcProjDef">
 	<DataTypes>
 		<DataType>
-			<Name GUID="{30041C4F-8D9C-4C0A-9A8A-33894F3F936D}" Namespace="lcls_twincat_sample_delivery.Tc2_SerialCom" AutoDeleteType="true">EL6inData22B</Name>
+			<Name GUID="{60F5E95D-1E1B-4FD7-91E2-CF1AF3E0757B}" Namespace="LCLS_Sample_Delivery.Tc2_SerialCom" AutoDeleteType="true">EL6inData22B</Name>
 			<Comment>
 				<![CDATA[ This data type is corresponding to the
    EL-6xxx data structure used in the
@@ -29,7 +29,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name GUID="{2A3132B6-0851-49EF-B04F-75670C297774}" Namespace="lcls_twincat_sample_delivery.Tc2_SerialCom" AutoDeleteType="true">EL6outData22B</Name>
+			<Name GUID="{6B2F338C-FF43-4657-AED9-E7BBB07528A3}" Namespace="LCLS_Sample_Delivery.Tc2_SerialCom" AutoDeleteType="true">EL6outData22B</Name>
 			<Comment>
 				<![CDATA[ This data type is corresponding to the
    EL-6xxx data structure used in the
@@ -63,10 +63,6 @@
 			<Vars VarGrpType="1">
 				<Name>PlcTask Inputs</Name>
 				<Var>
-					<Name>GVL_SDS.fb_4PortViciValve_01.fbNporValve.stViciSerial.stComIn</Name>
-					<Type GUID="{30041C4F-8D9C-4C0A-9A8A-33894F3F936D}" Namespace="lcls_twincat_sample_delivery.Tc2_SerialCom">EL6inData22B</Type>
-				</Var>
-				<Var>
 					<Name>GVL_SDS.SolenoidPairA.i_xEpics</Name>
 					<Comment>
 						<![CDATA[ open A when False, open B when True]]>
@@ -79,6 +75,10 @@
 						<![CDATA[ if True, do not set valves according to i_xEpics]]>
 					</Comment>
 					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_SDS.fb_4PortViciValve_01.fbNporValve.stViciSerial.stComIn</Name>
+					<Type GUID="{60F5E95D-1E1B-4FD7-91E2-CF1AF3E0757B}" Namespace="LCLS_Sample_Delivery.Tc2_SerialCom">EL6inData22B</Type>
 				</Var>
 			</Vars>
 			<Vars VarGrpType="2">
@@ -95,10 +95,6 @@
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_SDS.fb_4PortViciValve_01.fbNporValve.stViciSerial.stComOut</Name>
-					<Type GUID="{2A3132B6-0851-49EF-B04F-75670C297774}" Namespace="lcls_twincat_sample_delivery.Tc2_SerialCom">EL6outData22B</Type>
-				</Var>
-				<Var>
 					<Name>GVL_SDS.SolenoidPairA.q_xDO1</Name>
 					<Type>BOOL</Type>
 				</Var>
@@ -107,8 +103,36 @@
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
+					<Name>GVL_SDS.fb_4PortViciValve_01.fbNporValve.stViciSerial.stComOut</Name>
+					<Type GUID="{6B2F338C-FF43-4657-AED9-E7BBB07528A3}" Namespace="LCLS_Sample_Delivery.Tc2_SerialCom">EL6outData22B</Type>
+				</Var>
+				<Var>
 					<Name>GVL_SDS.SDS_VRC_01_CTL</Name>
 					<Type>BOOL</Type>
+				</Var>
+			</Vars>
+			<Vars VarGrpType="8">
+				<Name>PlcTask Retains</Name>
+				<Var>
+					<Name>PMPS_GVL.SuccessfulPreemption</Name>
+					<Comment>
+						<![CDATA[ Any time BPTM applies a new BP request which is confirmed]]>
+					</Comment>
+					<Type>UDINT</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>PMPS_GVL.AccumulatedFF</Name>
+					<Comment>
+						<![CDATA[ Any time a FF occurs]]>
+					</Comment>
+					<Type>UDINT</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>PMPS_GVL.BP_jsonDoc</Name>
+					<Type>SJsonValue</Type>
+					<InOut>7</InOut>
 				</Var>
 			</Vars>
 			<TaskPouOids>
